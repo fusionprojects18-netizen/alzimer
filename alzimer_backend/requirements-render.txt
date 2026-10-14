@@ -1,0 +1,18 @@
+# For deploying to a CPU-only host (e.g. Render). Use requirements.txt instead
+# for local development if your machine has a GPU you want torch to use.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+scikit-learn==1.5.2
+xgboost==2.1.1
+numpy==1.26.4
+pandas==2.2.3
+imbalanced-learn==0.12.3
+torch==2.6.0+cpu
+torchvision==0.21.0+cpu
+pillow==10.2.0
+python-multipart==0.0.9
+pyjwt==2.10.1
+python-dotenv==1.0.1

@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { color-scheme: light; }
+  body {
+    background-color: #ffffff;
+    color: #18181b;
+    font-family: "Inter", system-ui, sans-serif;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  #root { width: 100%; min-height: 100vh; }
+}
+
+@layer components {
+  /* Cards */
+  .card {
+    @apply bg-white border border-zinc-200 rounded-xl;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           px-4 py-2 rounded-lg bg-indigo-600 text-white
+           text-sm font-medium hover:bg-indigo-500
+           transition-colors duration-150
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+           px-4 py-2 rounded-lg
+           border border-zinc-200 text-zinc-600
+           hover:border-zinc-300 hover:text-zinc-900
+           text-sm font-medium transition-colors duration-150;
+  }
+
+  /* Danger */
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2
+           px-4 py-2 rounded-lg bg-red-600 text-white
+           text-sm font-medium hover:bg-red-500
+           transition-colors duration-150;
+  }
+
+  /* Input */
+  .input {
+    @apply w-full px-3 py-2 rounded-lg
+           bg-zinc-50 border border-zinc-200
+           text-zinc-900 placeholder-zinc-400 text-sm
+           focus:outline-none focus:border-indigo-500/70 focus:ring-1 focus:ring-indigo-500/30
+           transition-colors duration-150;
+  }
+
+  .input-label {
+    @apply block text-sm text-zinc-500 mb-1.5;
+  }
+
+  select.input option {
+    background: #ffffff;
+    color: #18181b;
+  }
+
+  /* Step states */
+  .step-active { @apply bg-indigo-600 text-white border-indigo-600; }
+  .step-done   { @apply bg-zinc-200 text-zinc-500 border-zinc-200; }
+  .step-idle   { @apply bg-transparent text-zinc-300 border-zinc-200; }
+
+  /* Badges */
+  .badge-low {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-medium
+           bg-emerald-50 text-emerald-700 border border-emerald-200;
+  }
+  .badge-moderate {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-medium
+           bg-amber-50 text-amber-700 border border-amber-200;
+  }
+  .badge-high {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-medium
+           bg-red-50 text-red-700 border border-red-200;
+  }
+  .badge-pending {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-medium
+           bg-zinc-100 text-zinc-500 border border-zinc-200;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-zinc-300 rounded; }
+}
